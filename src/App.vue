@@ -1,10 +1,20 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">Home</router-link>
   </div>
+  <Boton value='9' spanX.number=1 spanY.number=1 ></Boton>
   <router-view/>
 </template>
+
+<script>
+import Boton from '@/components/Boton.vue'
+export default {
+  name: 'app',
+  components:{
+    Boton
+  }
+}
+</script>
 
 <style>
 #app {
