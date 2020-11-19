@@ -24,12 +24,19 @@ export default {
     },
     computed:{
         ancho: function(){
-            return ((45 * this.spanX) + (2*(this.spanX -1)));
+            var ancho=this.spanX;
+            if(this.spanX<1) ancho=1;
+            if(this.spanY>1)ancho=1;
+            return ((45 * Math.floor(ancho)) + (2*(Math.floor(ancho) -1)));
             
         },
         alto: function(){
-            return ((45 * this.spanY) + (2*(this.spanY -1)));
+            var alto=this.spanY;
+            if(this.spanY<1) alto=1;
+            if(this.spanX>1)alto=1;
+            return ((45 * Math.floor(alto)) + (2*(Math.floor(alto) -1)));
         }
+       
     }
 }
 </script>
