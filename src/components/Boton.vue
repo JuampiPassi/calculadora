@@ -8,7 +8,7 @@
 <script>
 export default {
     name: 'Boton',
-    props: {value: [String,Symbol],spanX: {type: Number, default: 1}, spanY: {type: Number, default: 1}
+    props: {value: [Number,Symbol],spanX: {type: Number, default: 1}, spanY: {type: Number, default: 1}
     },
    
     mounted(){},
@@ -18,8 +18,8 @@ export default {
     },
     methods:{
         devolverValor(){
-           // return this.value;
-            console.log(this.value);
+            return this.value;
+            //console.log(this.value);
         }
     },
     computed:{
