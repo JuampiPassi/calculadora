@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="devolverValor" :style="{'width': +ancho+'px', 'height':+alto+'px'}">{{value}}</button>
+        <button @click="devolverValor" :style="{'width': +ancho+'px', 'height':+alto+'px'} ">{{value}}</button>
      
     </div>
 </template>
@@ -17,9 +17,10 @@ export default {
         }
     },
     methods:{
-        devolverValor(){
-            return this.value;
+        devolverValor:function(){
+           this.$emit('valorboton',this.value);
             //console.log(this.value);
+            
         }
     },
     computed:{

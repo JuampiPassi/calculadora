@@ -2,19 +2,16 @@
   <div id="nav">
     <router-link to="/">Home</router-link>
   </div>
-  <Boton value='+' spanX=3 spanY=3 ></Boton>
-  <Boton value='=' spanX=3.5 spanY=1 ></Boton>
-  <Boton value='8' spanX=2 spanY=1 ></Boton>
-  <Boton value='9' spanX=1 spanY=2 ></Boton>
+  <Teclado></Teclado>
   <router-view/>
 </template>
 
 <script>
-import Boton from '@/components/Boton.vue'
+import Teclado from './components/Teclado.vue'
 export default {
   name: 'app',
   components:{
-    Boton
+    Teclado
   }
 }
 </script>
