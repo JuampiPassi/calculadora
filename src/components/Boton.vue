@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="devolverValor" :style="{'width': +ancho+'px', 'height':+alto+'px'} ">{{value}}</button>
+        <button @click="devolverValor" :style="{'width': +ancho+'px', 'height':+alto+'px'}" :disabled="habilitado">{{value}}</button>
      
     </div>
 </template>
@@ -8,18 +8,19 @@
 <script>
 export default {
     name: 'Boton',
-    props: {value: [Number,Symbol],spanX: {type: Number, default: 1}, spanY: {type: Number, default: 1}
+    props: {value: [Number,Symbol],spanX: {type: Number, default: 1}, spanY: {type: Number, default: 1}, habilitado: {type: Boolean, default: null}
     },
    
     mounted(){},
     data(){
         return{ 
+          
         }
     },
     methods:{
         devolverValor:function(){
            this.$emit('valorboton',this.value);
-            //console.log(this.value);
+            //console.log(this.habilitado);
             
         }
     },

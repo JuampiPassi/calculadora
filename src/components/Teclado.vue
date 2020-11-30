@@ -2,21 +2,22 @@
 <div class="flexbox-container">
     <div class="teclado">
         <div class="display" @click="clear">{{operando1 || '0'}}</div>
-       <Boton value='1' spanX=1 spanY=1 @valorboton="agregar($event)"></Boton>
+       <Boton value='1' spanX=1 spanY=1  @valorboton="agregar($event)"></Boton>
        <Boton value='2' spanX=1 spanY=1  @valorboton="agregar($event)"></Boton>
        <Boton value='3' spanX=1 spanY=1  @valorboton="agregar($event)"></Boton>
-       <Boton value='+' spanX=1 spanY=1  @click="suma" :disabled='isDisabled'></Boton>
+       <Boton value='+' spanX=1 spanY=1  @click="suma" :habilitado="isDisabled"> </Boton>
        <Boton value='4' spanX=1 spanY=1  @valorboton="agregar($event)"></Boton>
        <Boton value='5' spanX=1 spanY=1  @valorboton="agregar($event)"></Boton>
        <Boton value='6' spanX=1 spanY=1  @valorboton="agregar($event)"></Boton>
-       <Boton value='-' spanX=1 spanY=1  @click="resta"></Boton>
+       <Boton value='-' spanX=1 spanY=1  @click="resta" :habilitado="isDisabled"></Boton>
        <Boton value='7' spanX=1 spanY=1  @valorboton="agregar($event)"></Boton>
        <Boton value='8' spanX=1 spanY=1  @valorboton="agregar($event)"></Boton>
        <Boton value='9' spanX=1 spanY=1  @valorboton="agregar($event)"></Boton>
-       <Boton value='*' spanX=1 spanY=1  @click="multiplicacion"></Boton>
+       <Boton value='*' spanX=1 spanY=1  @click="multiplicacion" :habilitado="isDisabled"></Boton>
        <Boton value='0' spanX=1 spanY=1  @valorboton="agregar($event)"></Boton>
-       <Boton value='=' spanX=2 spanY=1  @click="calcular"></Boton>
-       <Boton value='/' spanX=1 spanY=1  @click="division"></Boton>
+       <Boton value='=' spanX=2 spanY=1  @click="calcular" :habilitado="isDisabledIgual"></Boton>
+       <Boton value='/' spanX=1 spanY=1  @click="division" :habilitado="isDisabled"></Boton>
+       <button disabled=""> Hola</button>
        
    
     </div>
@@ -38,7 +39,8 @@ export default {
           operando2: '',
           operando1: '',
           operator: null,
-          operatorClicked: false
+          operatorClicked: false,
+        
       }
   },
   methods: {
@@ -59,6 +61,7 @@ export default {
       suma(){
           this.operator=(a, b) => a + b;
           this.setPrevNum();
+        
       },
       resta(){
           this.operator=(a, b) => a - b;
@@ -80,14 +83,18 @@ export default {
               parseFloat(this.operando1)
               )}`;
             this.operando2= '';
+            
           }
       }
       
   },
   computed:{
-      isDisabled: function(){
-          return !(this.operando1==='');
-      }
+     isDisabled: function(){
+         return this.operando1 == '';
+     },
+     isDisabledIgual(){
+         return this.operando2 == '' || this.operando1 == '';
+     }
   }
 };
 </script>
