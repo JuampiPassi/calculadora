@@ -17,7 +17,7 @@
        <Boton value='0' spanX=1 spanY=1  @valorboton="agregar($event)"></Boton>
        <Boton value='=' spanX=2 spanY=1  @click="calcular" :habilitado="isDisabledIgual"></Boton>
        <Boton value='/' spanX=1 spanY=1  @click="division" :habilitado="isDisabled"></Boton>
-       <button disabled=""> Hola</button>
+       
        
    
     </div>
