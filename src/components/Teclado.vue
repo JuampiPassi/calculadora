@@ -1,7 +1,7 @@
 <template>
 <div class="flexbox-container">
     <div class="teclado">
-        <div class="display" @click="clear">{{operando1 || '0'}}</div>
+       <!-- <div class="display" @click="clear">{{operando1 || '0'}}</div>-->
        <Boton value='1' spanX=1 spanY=1  @valorboton="agregar($event)"></Boton>
        <Boton value='2' spanX=1 spanY=1  @valorboton="agregar($event)"></Boton>
        <Boton value='3' spanX=1 spanY=1  @valorboton="agregar($event)"></Boton>
