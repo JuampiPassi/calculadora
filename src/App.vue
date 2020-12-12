@@ -2,19 +2,16 @@
   <div id="nav">
     <router-link to="/">Home</router-link>
   </div>
-  <Pantalla></Pantalla>
-  <Teclado></Teclado>
+    <Calculadora></Calculadora>
   <router-view/>
 </template>
 
 <script>
-import Teclado from './components/Teclado.vue'
-import Pantalla from './components/Pantalla.vue'
+import Calculadora from './components/Calculadora.vue'
 export default {
   name: 'app',
   components:{
-    Teclado,
-    Pantalla
+    Calculadora
   }
 }
 </script>
