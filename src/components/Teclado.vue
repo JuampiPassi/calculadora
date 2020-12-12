@@ -17,6 +17,8 @@
        <Boton value='0' spanX=1 spanY=1  @valorboton="agregar($event)" @click="devolverValor"></Boton>
        <Boton value='=' spanX=2 spanY=1  @click="calcular" :habilitado="isDisabledIgual"></Boton>
        <Boton value='/' spanX=1 spanY=1  @click="division" :habilitado="isDisabled"></Boton>
+       <Boton value='C' spanX=1 spanY=1  @click="clear"></Boton>
+       
        
        
     </div>
@@ -45,6 +47,7 @@ export default {
   methods: {
       clear(){
           this.operando1='';
+          this.$emit('input', 'c');
       },
       agregar(num){
           if(this.operatorClicked){
@@ -77,7 +80,7 @@ export default {
       division(){
           this.operator=(a, b) => a / b;
           this.setPrevNum();
-           this.$emit('input', '-');
+           this.$emit('input', '/');
       },
       calcular(){
          /* console.log(this.operando1, this.operando2);*/

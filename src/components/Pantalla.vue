@@ -31,6 +31,10 @@ export default {
                 this.acumulado+=this.operando+'=';
                 this.operando=valor.substr(1);
             }
+            else if(valor=='c'){
+                this.operando='';
+                this.acumulado='';
+            }
             else { throw new Error('Argumento no valido.'); }
         }
     }
@@ -54,9 +58,11 @@ export default {
     .acumulado{
        /* font-size: 10px;*/
         /*line-height: 30px;*/
+        margin-right: 10px;
     }
     .operando{
         font-size: 40px;
         line-height: 40px;
+        margin-right: 10px;
     }
 </style>

@@ -1,5 +1,6 @@
 <template>
     <div>
+      <h1>Calculadora</h1>
         <Pantalla ref="pantalla"></Pantalla>
         <Teclado @input="operando($event)"></Teclado>
     </div>
@@ -31,5 +32,7 @@ export default {
 </script>
 
 <style scoped>
-
+  h1{
+    font-size: 50px;
+  }
 </style>
