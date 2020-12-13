@@ -91,6 +91,8 @@ export default {
               )}`;
             this.operando2= '';
              this.$emit('input', '='+this.operando1);
+             this.operando1='';
+            
           }
       },
       devolverValor(){

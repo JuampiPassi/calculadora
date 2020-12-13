@@ -18,10 +18,17 @@ export default {
     },
     methods:{
         agregarTexto(valor){
-            console.log(valor);
+           // console.log(valor);
+            
+            if(this.acumulado.charAt(this.acumulado.length-1)=='='){
+                this.operando='';
+                this.acumulado='';
+                console.log(this.operando);
+            }
            if(valor=='0'||valor=='1'||valor=='2'||valor=='3'||valor=='4'||valor=='5'||valor=='6'||valor=='7'||valor=='8'||valor=='9'){
-                //if(this.operando=='0'){this.operando=''}
+               
                 this.operando+=valor ;
+                
            }
             else if(valor=='+' || valor=='-' || valor=='*'|| valor=='/'){
                 this.acumulado=this.operando+valor;
@@ -30,6 +37,7 @@ export default {
             else if(valor.charAt(0)=='='){
                 this.acumulado+=this.operando+'=';
                 this.operando=valor.substr(1);
+                
             }
             else if(valor=='c'){
                 this.operando='';
